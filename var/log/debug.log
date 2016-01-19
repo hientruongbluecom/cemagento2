@@ -3820,3 +3820,8 @@
 [2016-01-19 04:35:41] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"},"is_exception":false} []
 [2016-01-19 04:35:41] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"},"is_exception":false} []
 [2016-01-19 06:49:10] main.DEBUG: cache_invalidate:  {"method":"POST","url":"http://demo.magento2.com/admin/admin/index/index/key/2235f66f0c002a5aa45387259e0b92f8118831f64111f1e34ecbf745bb01cff6/","invalidateInfo":{"tags":["BACKEND_MAINMENU"],"mode":"matchingAnyTag"},"is_exception":false} []
+[2016-01-19 07:23:13] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"},"is_exception":false} []
+[2016-01-19 07:23:13] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"},"is_exception":false} []
+[2016-01-19 09:02:33] main.DEBUG: cache_invalidate:  {"method":"POST","url":"http://demo.magento2.com/admin/admin/index/index/key/ee5bf00c6403202d2a912ca71e86d2c5e882cc0f87b08e432d7095dad7813979/","invalidateInfo":{"tags":["BACKEND_MAINMENU"],"mode":"matchingAnyTag"},"is_exception":false} []
+[2016-01-19 09:05:50] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"},"is_exception":false} []
+[2016-01-19 09:05:50] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"},"is_exception":false} []

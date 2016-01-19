@@ -4,6 +4,7 @@ return array (
   array (
     'Bluecom_FreeGeoIp' => 1,
     'Bluecom_Helloworld' => 1,
+    'Bluecom_OrderController' => 1,
     'Bluecom_Review' => 1,
     'Magento_Store' => 1,
     'Magento_AdvancedPricingImportExport' => 1,
