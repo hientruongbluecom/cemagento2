@@ -2,5 +2,9 @@
 
 ### Magento template
 /var/
-index.php
+/var/generation/
+/var/cache/
+/var/page_cache/
+/var/di/
+/pub/media/
 
