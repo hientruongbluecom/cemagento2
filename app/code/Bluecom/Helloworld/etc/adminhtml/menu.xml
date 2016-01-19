@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="Bluecom_Helloworld::brand" title="Test Menu Hello World" module="Bluecom_Helloworld" sortOrder="30" resource="Bluecom_Helloworld::brand"/>
+
+        <add id="Bluecom_Helloworld::brand_head_manage" title="Brand" module="Bluecom_Helloworld" sortOrder="10" parent="Bluecom_Helloworld::brand" resource="Bluecom_Helloworld::brand_head_manage"/>
+
+        <add id="Bluecom_Helloworld::brand_new" title="Add New Brand" module="Bluecom_Helloworld" sortOrder="10" parent="Bluecom_Helloworld::brand_head_manage" action="helloworld/brand/new" resource="Bluecom_Helloworld::brand_new"/>
+
+        <add id="Bluecom_Helloworld::brand_head_settings" title="Settings" module="Bluecom_Helloworld" sortOrder="20" parent="Bluecom_Helloworld::brand_head_manage" resource="Bluecom_Helloworld::brand_manage"/>
+
+        <add id="Bluecom_Helloworld::configuration" title="Configuration" module="Bluecom_Helloworld" sortOrder="6"
+             parent="Bluecom_Helloworld::brand_head_settings" action="adminhtml/system_config/edit/section/menubrand" resource="Bluecom_Helloworld::configuration"/>
+    </menu>
+</config>
+ 
