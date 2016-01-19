@@ -5,6 +5,7 @@ class Review extends \Magento\Review\Model\Review
 {
     /**
      * Validate nickname of customer
+     *
      * @return array|bool|\string[]
      */
     public function validate()
