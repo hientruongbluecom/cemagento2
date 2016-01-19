@@ -10,14 +10,17 @@ class Review extends \Magento\Review\Model\Review
      */
     public function validate()
     {
+
         $errors = [];
-        $validator = new Regex(array('pattern' => '/^[a-zA-Z0-9]*[^_]*$/'));
-        if($validator->isValid($this->getNickname())) {
-            $errors[] = __('Your nickname should not contain dashes. Please try again');
+
+        if (\Zend_Validate::is($this->getNickname(), 'Regex', array('pattern' => '/-/'))) {
+            $errors[] = __('Reivew Error! Nickname should not contain dashes. Please try again!');
         }
-        if(!empty($errors)) {
+
+        if (!empty($errors)) {
             return $errors;
         }
+
         return parent::validate();
     }
 }

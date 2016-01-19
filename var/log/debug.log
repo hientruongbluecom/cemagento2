@@ -3816,3 +3816,7 @@
 [2016-01-18 11:05:37] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"},"is_exception":false} []
 [2016-01-18 11:05:37] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"},"is_exception":false} []
 [2016-01-18 11:07:55] main.DEBUG: cache_invalidate:  {"method":"POST","url":"http://demo.magento2.com/admin/admin/index/index/key/98ac1b733cabcc27d214727cfecca95201549225e6cc80a329ba3ed417abf2e0/","invalidateInfo":{"tags":["BACKEND_MAINMENU"],"mode":"matchingAnyTag"},"is_exception":false} []
+[2016-01-19 04:32:37] main.DEBUG: cache_invalidate:  {"method":"POST","url":"http://demo.magento2.com/admin/admin/index/index/key/e3b99cd4b1ff333e11afb2821c1540ba1aa8b28b48c224b2ff7a94b9560c9271/","invalidateInfo":{"tags":["BACKEND_MAINMENU"],"mode":"matchingAnyTag"},"is_exception":false} []
+[2016-01-19 04:35:41] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"},"is_exception":false} []
+[2016-01-19 04:35:41] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"},"is_exception":false} []
+[2016-01-19 06:49:10] main.DEBUG: cache_invalidate:  {"method":"POST","url":"http://demo.magento2.com/admin/admin/index/index/key/2235f66f0c002a5aa45387259e0b92f8118831f64111f1e34ecbf745bb01cff6/","invalidateInfo":{"tags":["BACKEND_MAINMENU"],"mode":"matchingAnyTag"},"is_exception":false} []

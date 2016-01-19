@@ -269,14 +269,11 @@ class Review extends \Magento\Framework\Model\AbstractModel implements IdentityI
         $errors = [];
 
         if (!\Zend_Validate::is($this->getTitle(), 'NotEmpty')) {
-            $errors[] = __('Please enter a review summary.');
+            $errors[] = __('ghPlease enter a review summary.');
         }
 
         if (!\Zend_Validate::is($this->getNickname(), 'NotEmpty')) {
             $errors[] = __('Please enter a nickname.');
-        } else if(\Zend_Validate::is($this->getNickname(), 'Regex', array('pattern' => '/-/')))
-        {
-            $errors[] = __('Please enter a nickname not contain dashes.');
         }
 
         if (!\Zend_Validate::is($this->getDetail(), 'NotEmpty')) {
@@ -286,6 +283,7 @@ class Review extends \Magento\Framework\Model\AbstractModel implements IdentityI
         if (empty($errors)) {
             return true;
         }
+
         return $errors;
     }
 
