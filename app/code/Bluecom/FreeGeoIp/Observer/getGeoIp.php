@@ -31,6 +31,11 @@ class getGeoIp implements ObserverInterface
         $this->_request = $request;
     }
 
+    /**
+     * Get Country User
+     *
+     * @param EventObserver $observer
+     */
     public function execute(EventObserver $observer)
     {
         if (!$this->_customerSession->getLocated()) {

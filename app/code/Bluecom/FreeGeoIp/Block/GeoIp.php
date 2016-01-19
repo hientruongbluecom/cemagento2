@@ -5,6 +5,13 @@ class GeoIp extends \Magento\Framework\View\Element\AbstractBlock
 {
     protected $_customerSession;
 
+    /**
+     * Construct block FreeGeo Ip
+     *
+     * @param \Magento\Framework\View\Element\Context $context
+     * @param \Magento\Customer\Model\Session $session
+     * @param array $data
+     */
     public function __construct(
         \Magento\Framework\View\Element\Context $context,
         \Magento\Customer\Model\Session $session,
@@ -16,6 +23,11 @@ class GeoIp extends \Magento\Framework\View\Element\AbstractBlock
         parent::__construct($context, $data);
     }
 
+    /**
+     * Get information country
+     *
+     * @return string
+     */
     protected function _toHtml()
     {
         $locationData = $this->_customerSession->getLocationData();
