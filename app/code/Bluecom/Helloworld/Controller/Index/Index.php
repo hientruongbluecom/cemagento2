@@ -1,7 +1,9 @@
 <?php
 namespace Bluecom\Helloworld\Controller\Index;
+
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\View\Result\PageFactory;
+
 class Index extends \Magento\Framework\App\Action\Action
 {
     /**
