@@ -23,7 +23,7 @@ class Index extends \Magento\Framework\App\Action\Action
     }
 
     /**
-     * Get Data Order 
+     * Get Data Order
      *
      * @throws \Exception
      * @throws \Zend_Validate_Exception
@@ -61,7 +61,7 @@ class Index extends \Magento\Framework\App\Action\Action
                 $this->getResponse()->setBody(json_encode($orderData));
             }
         } else {
-            $this->getResponse()->setBody('Error! OrderID must only is number!');
+            $this->getResponse()->setBody('Error! OrderID must is number!');
         }
     }
 }
