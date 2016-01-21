@@ -6,6 +6,7 @@ return array (
     'Bluecom_Helloworld' => 1,
     'Bluecom_OrderController' => 1,
     'Bluecom_Review' => 1,
+    'Bluecom_Specific404Page' => 1,
     'Magento_Store' => 1,
     'Magento_AdvancedPricingImportExport' => 1,
     'Magento_Directory' => 1,
