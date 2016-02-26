@@ -1,10 +1,11 @@
-/.idea
-
-### Magento template
+/.idea/
 /var/
 /var/generation/
 /var/cache/
 /var/page_cache/
 /var/di/
+/var/view_preprocessed/
 /pub/media/
+/app/code/Darsh/
+/app/code/Magestore/
 
