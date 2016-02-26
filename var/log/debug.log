@@ -1,3 +1,0 @@
-[2016-02-23 08:12:45] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"},"is_exception":false} []
-[2016-02-23 08:12:45] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"},"is_exception":false} []
-[2016-02-23 08:31:21] main.DEBUG: cache_invalidate:  {"method":"POST","url":"http://demo.magento2.com/admin/admin/index/index/key/2a3d47fc5fdd4d83afe856ca04e0754be82ae3eaf9c6c1846d4a1c1b3ac856ac/","invalidateInfo":{"tags":["BACKEND_MAINMENU"],"mode":"matchingAnyTag"},"is_exception":false} []
