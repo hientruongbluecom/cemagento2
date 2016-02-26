@@ -1,0 +1,8 @@
+<?php $order = $block->getOrder() ?>
+<?php if ($order): ?>
+    <ul>
+        <li><strong><?php echo __('Order Status') ?>:</strong> <?php echo $order->getStatus() ?></li>
+        <li><strong><?php echo __('Order Total') ?>:</strong> <?php echo $order->getGrandTotal() ?></li>
+        <li><strong><?php echo __('Order Total Invoiced') ?>:</strong> <?php echo $order->getTotalInvoiced() ?></li>
+    </ul>
+<?php endif; ?>
