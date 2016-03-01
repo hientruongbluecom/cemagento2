@@ -1,0 +1,10 @@
+<?php $collection = $this->getCollection(); ?>
+<?php if($collection->count()): ?>
+    <ul>
+        <?php foreach ($collection as $vendor): ?>
+            <li><?php echo $vendor->getId() . '-' . $vendor->getName() ?></li>
+        <?php endforeach; ?>
+    </ul>
+<?php else: ?>
+    <?php echo __('No vendor found.') ?>
+<?php endif; ?>
