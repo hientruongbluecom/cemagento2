@@ -1,0 +1,10 @@
+<?php $collection = $this->getVendors(); ?>
+<?php if($collection->count()): ?>
+    <ul>
+        <?php foreach ($collection as $vendor): ?>
+            <li><a href="<?php echo $this->getViewUrl($vendor) ?>"><?php echo $vendor->getName() ?></a></li>
+        <?php endforeach; ?>
+    </ul>
+<?php else: ?>
+    <?php echo __('No vendor found.') ?>
+<?php endif; ?>
