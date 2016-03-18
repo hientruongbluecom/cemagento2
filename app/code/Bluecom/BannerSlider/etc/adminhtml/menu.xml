@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Bluecom_BannerSlider::base" title="Banners" module="Bluecom_BannerSlider" sortOrder="20" resource="Bluecom_BannerSlider::bannerslider"/>
+        <add id="Bluecom_BannerSlider::sliders" title="Sliders" module="Bluecom_BannerSlider" sortOrder="10" parent="Bluecom_BannerSlider::base" action="banneradmin/sliders/" resource="Bluecom_BannerSlider::sliders"/>
+        <add id="Bluecom_BannerSlider::banners" title="Banners" module="Bluecom_BannerSlider" sortOrder="10" parent="Bluecom_BannerSlider::base" action="banneradmin/banners/" resource="Bluecom_BannerSlider::banners"/>
+    </menu>
+</config>
