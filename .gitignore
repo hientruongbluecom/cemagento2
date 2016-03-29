@@ -1,4 +1,5 @@
 /.idea/
+/.htaccess
 /var/
 /var/generation/
 /var/cache/
@@ -8,4 +9,13 @@
 /pub/media/
 /app/code/Darsh/
 /app/code/Magestore/
+/app/bootstrap.php
+/app/etc/
+
+/pub/
+/pub/static/
+/pub/errors/
+
+/dev/tests/
+
 

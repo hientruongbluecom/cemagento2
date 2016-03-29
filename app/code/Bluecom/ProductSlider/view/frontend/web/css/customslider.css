@@ -1,0 +1,39 @@
+.bc-slider-list-product .product-item-name{
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.flex-direction-nav a{
+    height:45px;
+}
+.flexslider .flex-direction-nav a,
+.flexslider .flex-direction-nav a {
+    display: block; /* I added this line */
+}
+.flex-direction-nav .flex-next { right: 0 !important; margin-right: -40px; opacity: 1 !important; }
+.flex-direction-nav .flex-prev { left: 0 !important; opacity: 1 !important; margin-left: -40px; }
+.flexslider { width: 90%; margin: 0 auto; }
+@media screen and (min-width: 1024px) {
+    .page-layout-1column .block.widget .products-grid .bc-slider-list-product .product-item {
+        margin-left: 0;
+    }
+    .page-layout-1column .block.widget .products-grid .bc-slider-list-product .product-item:nth-child(4n+1){
+        margin-left: 0;
+    }
+
+}
+@media screen and (min-width: 640px) {
+    .products-grid .product-item-info:hover, .products-grid .product-item-info.active {
+        margin: 2px;
+    }
+}
+@media screen and (min-width: 320px) {
+    .flex-direction-nav a{
+        width: 15px;
+        height: 25px;
+    }
+    .flex-direction-nav a::before {
+        font-size: 20px;
+    }
+}

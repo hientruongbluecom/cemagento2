@@ -496,7 +496,6 @@ abstract class AbstractBlock extends \Magento\Framework\DataObject implements Bl
                 $out .= $layout->renderElement($child, $useCache);
             }
         }
-
         return $out;
     }
 

@@ -225,9 +225,9 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            rolesTree: 'Magento_User/js/roles-tree'
+            orderEditDialog: 'Magento_Sales/order/edit/message'
         }
-    } 
+    }
 };
 require.config(config);
 })();
@@ -240,9 +240,9 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            orderEditDialog: 'Magento_Sales/order/edit/message'
+            rolesTree: 'Magento_User/js/roles-tree'
         }
-    }
+    } 
 };
 require.config(config);
 })();
@@ -270,13 +270,10 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            braintree:                  'https://js.braintreegateway.com/v2/braintree.js',
-            braintreeCcForm:            'Magento_Braintree/js/cc-form',
-            braintreeDataJs:            'Magento_Braintree/js/cc-data'
+            fptAttribute: 'Magento_Weee/js/fpt-attribute'
         }
     }
 };
-
 require.config(config);
 })();
 (function() {
@@ -319,10 +316,13 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            transparent:            'Magento_Payment/transparent'
+            braintree:                  'https://js.braintreegateway.com/v2/braintree.js',
+            braintreeCcForm:            'Magento_Braintree/js/cc-form',
+            braintreeDataJs:            'Magento_Braintree/js/cc-data'
         }
     }
 };
+
 require.config(config);
 })();
 (function() {
@@ -334,7 +334,7 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            fptAttribute: 'Magento_Weee/js/fpt-attribute'
+            transparent:            'Magento_Payment/transparent'
         }
     }
 };
@@ -377,6 +377,33 @@ var config = {
             uiRegistry:     'Magento_Ui/js/lib/registry/registry',
             uiLayout:       'Magento_Ui/js/core/renderer/layout'
         }
+    }
+};
+
+require.config(config);
+})();
+(function() {
+var config = {
+    map: {
+        '*': {
+            'magestore/note': 'Magestore_Bannerslider/js/jquery/slider/jquery-ads-note',
+        },
+    },
+    paths: {
+        'magestore/flexslider': 'Magestore_Bannerslider/js/jquery/slider/jquery-flexslider-min',
+        'magestore/evolutionslider': 'Magestore_Bannerslider/js/jquery/slider/jquery-slider-min',
+        'magestore/zebra-tooltips': 'Magestore_Bannerslider/js/jquery/ui/zebra-tooltips',
+    },
+    shim: {
+        'magestore/flexslider': {
+            deps: ['jquery']
+        },
+        'magestore/evolutionslider': {
+            deps: ['jquery']
+        },
+        'magestore/zebra-tooltips': {
+            deps: ['jquery']
+        },
     }
 };
 
