@@ -32,8 +32,8 @@ if ($exist = ($block->getProductCollection() && $block->getProductCollection()->
         <?php endif ?>
         <div class="block-content">
             <?php echo '<!-- ' . $image . '-->' ?>
-            <div class="products-<?php  echo $mode; ?> <?php  echo $mode; ?> flexslider">
-                <ul class="product-items <?php  echo $type; ?> bc-slider-list-product slides">
+            <div class="products-<?php  echo $mode; ?> <?php  echo $mode; ?> bc-slider-list-product flexslider">
+                <ul class="product-items <?php  echo $type; ?> slides">
                     <?php $iterator = 1; ?>
                     <?php foreach ($items as $_item): ?>
                         <?php  echo($iterator++ == 1) ? '<li class="product-item">' : '</li><li class="product-item">' ?>
@@ -140,7 +140,7 @@ if ($exist = ($block->getProductCollection() && $block->getProductCollection()->
         }
 
         $window.load(function() {
-            $('.flexslider').flexslider({
+            $('.bc-slider-list-product').flexslider({
                 animation: "slide",
                 animationSpeed: 400,
                 animationLoop: true,
