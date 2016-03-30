@@ -15,10 +15,10 @@
 .flex-direction-nav .flex-prev { left: 0 !important; opacity: 1 !important; margin-left: -40px; }
 .flexslider { width: 90%; margin: 0 auto; }
 @media screen and (min-width: 1024px) {
-    .page-layout-1column .block.widget .products-grid .bc-slider-list-product .product-item {
+    .page-layout-1column .block.widget .products-grid.bc-slider-list-product .product-item {
         margin-left: 0;
     }
-    .page-layout-1column .block.widget .products-grid .bc-slider-list-product .product-item:nth-child(4n+1){
+    .page-layout-1column .block.widget .products-grid.bc-slider-list-product .product-item:nth-child(4n+1){
         margin-left: 0;
     }
 
