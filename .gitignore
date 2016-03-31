@@ -1,4 +1,5 @@
 /.idea/
+/.idea/*.xml
 /.htaccess
 /var/
 /var/generation/
@@ -11,6 +12,8 @@
 /app/code/Magestore/
 /app/bootstrap.php
 /app/etc/
+/app/etc/config.php
+/app/etc/env.php
 
 /pub/
 /pub/static/
