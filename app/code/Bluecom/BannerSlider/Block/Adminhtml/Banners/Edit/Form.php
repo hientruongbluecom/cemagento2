@@ -1,5 +1,5 @@
 <?php
-namespace Bluecom\BannerSlider\Block\Adminhtml\Sliders\Edit;
+namespace Bluecom\BannerSlider\Block\Adminhtml\Banners\Edit;
 
 use Magento\Backend\Block\Widget\Form\Generic;
 

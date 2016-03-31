@@ -96,12 +96,6 @@ class InstallSchema implements InstallSchemaInterface
                 ['nullable' => true, 'default' => ''],
                 'Banner url'
             )->addColumn(
-                'target',
-                \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
-                10,
-                ['nullable' => true, 'default' => '0'],
-                'Banner target'
-            )->addColumn(
                 'image',
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 255,

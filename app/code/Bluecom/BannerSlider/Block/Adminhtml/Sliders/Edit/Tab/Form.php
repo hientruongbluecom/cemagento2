@@ -1,5 +1,5 @@
 <?php
-namespace Bluecom\BannerSlider\Block\Sliders\Edit\Tab;
+namespace Bluecom\BannerSlider\Block\Adminhtml\Sliders\Edit\Tab;
 
 use Magento\Backend\Block\Template\Context;
 use Magento\Backend\Block\Widget\Form\Generic;

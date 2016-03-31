@@ -1,5 +1,5 @@
 (function(require){
-require.config({"baseUrl":"http://demo.magento2.com/pub/static/frontend/Magento/luma/en_US"});
+require.config({"baseUrl":"http://demo.magento2.com/static/frontend/Magento/luma/en_US"});
 (function() {
 /**
  * Copyright © 2015 Magento. All rights reserved.

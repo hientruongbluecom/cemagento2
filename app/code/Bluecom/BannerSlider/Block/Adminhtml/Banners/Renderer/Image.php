@@ -13,7 +13,7 @@ class Image extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractR
     /**
      * banner factory.
      *
-     * @var \Magestore\Bannerslider\Model\BannerFactory
+     * @var \Bluecom\BannerSlider\Model\BannerFactory
      */
     protected $_bannerFactory;
 
@@ -22,7 +22,7 @@ class Image extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractR
      *
      * @param \Magento\Backend\Block\Context              $context
      * @param \Magento\Store\Model\StoreManagerInterface  $storeManager
-     * @param \Magestore\Bannerslider\Model\BannerFactory $bannerFactory
+     * @param \Bluecom\BannerSlider\Model\BannerFactory $bannerFactory
      * @param array                                       $data
      */
     public function __construct(
