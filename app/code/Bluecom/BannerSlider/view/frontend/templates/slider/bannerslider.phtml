@@ -1,0 +1,48 @@
+<?php
+$bannerCollection = $block->getCollectionBanners();
+$title = $block->getTitle();
+$showNavigation = $block->getShowControlNav()? 'true' :'false';
+$slideshowSpeed = $block->getSlideShowSpeed();
+$showDescriptionBanner = $block->getShowDescriptionBanner();
+ ?>
+
+<div class="flexslider bc-banner-slider">
+    <ul class="slides">
+        <?php foreach ($bannerCollection as $banner):
+           ?>
+            <li>
+                <a class="banner-img" href="<?php echo $banner->getUrl()?>" target="_blank">
+                    <img alt="<?php echo $banner->getImageAlt() ?>" src="<?php echo $block->getBannerImageUrl($banner->getImage()); ?>"/>
+                </a>
+                <?php if ($showDescriptionBanner) {
+                    echo '<div class="flex-caption">'.$banner->getDescription().'</div>';
+                }?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+
+
+<script type="text/javascript">
+
+    require([
+        "jquery",
+        "jquery/jquery.cookie",
+        "mage/mage",
+        "mage/cookies",
+        "jquery/jquery-migrate",
+        "flexslider"
+    ], function($){
+        var $window = $(window);
+        $window.load(function() {
+            $('.bc-banner-slider').flexslider({
+                animation: "fade",
+                slideshowSpeed: <?php echo $slideshowSpeed ?>,
+                animationLoop: true,
+                controlNav: <?php echo $showNavigation ?>,
+            });
+        });
+    });
+
+</script>
+

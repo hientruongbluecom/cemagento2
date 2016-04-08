@@ -1,9 +1,11 @@
 <?php
-namespace Bluecom\BannerSlider\Controller\Adminhtml\Sliders;
+namespace Bluecom\BannerSlider\Controller\Adminhtml\Banners;
 
-use Bluecom\BannerSlider\Controller\Adminhtml\Sliders;
+use Magento\Framework\App\Filesystem\DirectoryList;
 
-class Save extends Sliders
+use Bluecom\BannerSlider\Controller\Adminhtml\Banners;
+
+class Save extends Banners
 {
     /**
      * Save banner action
@@ -15,23 +17,57 @@ class Save extends Sliders
         $data = $this->getRequest()->getPostValue();
 
         if (isset($data)) {
-            // save upload image banner
-            if (isset($_FILES['image']) && isset($_FILES['image']['name']) && strlen($_FILES['image']['name'])) {
-
-            }
-            // end save upload image banner
-
-
             $bannerId = $this->getRequest()->getParam('banner_id');;
 
             $model = $this->_bannerFactory->create();
+            if ($bannerId) {
+                $model->load($bannerId);
+            }
 
-            $model->load($bannerId);
+            // save upload image banner
+            if (isset($_FILES['image']) && isset($_FILES['image']['name']) && strlen($_FILES['image']['name'])) {
+                try {
+                    $uploader = $this->_objectManager->create('\Magento\MediaStorage\Model\File\Uploader', array('fileId' => 'image'));
+                    $uploader->setAllowedExtensions(array('jpg', 'jpeg', 'gif', 'png'));
+                    $uploader->setAllowRenameFiles(true);
+                    $uploader->setFilesDispersion(true);
+
+                    /** @var \Magento\Framework\Filesystem\Directory\Read $mediaDirectory */
+                    $mediaDirectory = $this->_objectManager->get('Magento\Framework\Filesystem')
+                        ->getDirectoryRead(DirectoryList::MEDIA);
+                    $result = $uploader->save(
+                        $mediaDirectory->getAbsolutePath('bluecom/bannerslider/images'));
+
+                    unset($result['tmp_name']);
+                    unset($result['path']);
+
+                    $data['image'] = 'bluecom/bannerslider/images'.$result['file'];
+
+                } catch (\Exception $e) {
+                    if ($e->getCode() == 0) {
+                        $this->messageManager->addError($e->getMessage());
+                    }
+                }
+            } else {
+
+                if (isset($data['image']) && isset($data['image']['value'])) {
+                    if (isset($data['image']['delete'])) {
+                        $data['image'] = null;
+                        $data['delete_image'] = true;
+                    } elseif (isset($data['image']['value'])) {
+                        $data['image'] = $data['image']['value'];
+                    } else {
+                        $data['image'] = null;
+                    }
+                }
+            }
+            // end save upload image banner
 
             $model->setData($data);
 
             try {
                 $model->save();
+
                 $this->messageManager->addSuccess(__('The banner has been saved.'));
                 $this->_getSession()->setFormData(false);
                 if ($this->getRequest()->getParam('back')) {

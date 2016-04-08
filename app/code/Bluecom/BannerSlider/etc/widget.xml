@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="banner_slider" class="Bluecom\BannerSlider\Block\Widget\BannerSlider"
+            placeholder_image="Bluecom_BannerSlider::images/widget_banner.png" ttl="86400">
+        <label translate="true">Slider Banner</label>
+        <description translate="true">Slider Of List Banner</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="false" visible="true">
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="slider_id" xsi:type="select" source_model="Bluecom\BannerSlider\Model\Widget\Sliders" visible="true">
+                <label translate="true">List Slider</label>
+            </parameter>
+            <parameter name="show_control_nav" xsi:type="select" visible="true" required="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display navigation for paging control of each slide</label>
+            </parameter>
+            <parameter name="slide_show_speed" xsi:type="text" required="false" visible="true">
+                <label translate="true">Slide Show Speed</label>
+                <value>6000</value>
+            </parameter>
+            <parameter name="show_description_banner" xsi:type="select" visible="true" required="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display description of each banner</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

@@ -40,7 +40,9 @@ class Form extends Generic implements TabInterface
 
         $form = $this->_formFactory->create();
 
-        $form->setHtmlIdPrefix('item_');      $fieldset = $form->addFieldset('base_fieldset', ['legend' => __('Item Information')]);
+        $form->setHtmlIdPrefix('item_');
+
+        $fieldset = $form->addFieldset('base_fieldset', ['legend' => __('Item Information')]);
 
         if ($model->getId()) {
             $fieldset->addField('banner_id', 'hidden', ['name' => 'banner_id']);
@@ -67,8 +69,6 @@ class Form extends Generic implements TabInterface
                 'name' => 'slider_id',
                 'options' => $this->getOptionListSlider(),
                 'disabled' => false,
-                'required' => true,
-                'class' => 'required-entry',
             ]
         );
 
@@ -91,6 +91,7 @@ class Form extends Generic implements TabInterface
                 'title' => __('URL'),
                 'label' => __('URL'),
                 'name' => 'url',
+                'class' => 'validate-url',
             ]
         );
 
@@ -98,10 +99,12 @@ class Form extends Generic implements TabInterface
             'image',
             'image',
             [
-                'title' => __('Image'),
-                'label' => __('Image'),
+                'title' => __('Banner Image'),
+                'label' => __('Banner Image'),
                 'name' => 'image',
                 'required' => true,
+                'class'    => 'required-file',
+                'disabled' => false,
                 'note' => 'Allow image type: jpg, jpeg, gif, png',
             ]
         );
@@ -113,6 +116,18 @@ class Form extends Generic implements TabInterface
                 'title' => __('Image Alt For Seo'),
                 'label' => __('Image Alt For Seo'),
                 'name' => 'image_alt',
+            ]
+        );
+
+        $fieldMaps['description'] = $fieldset->addField(
+            'description',
+            'editor',
+            [
+                'name' => 'description',
+                'label' => __('Note\'s content'),
+                'title' => __('Note\'s content'),
+                'wysiwyg' => true,
+                'required' => false,
             ]
         );
 
@@ -138,7 +153,10 @@ class Form extends Generic implements TabInterface
                 'date_format' => $dateFormat,
                 'time_format' => $timeFormat,
                 'title' => __('Start Date'),
-                'required' => false
+                'required' => true,
+                'class' => 'required-entry',
+                'readonly' => true,
+                'note' => $this->_localeDate->getDateTimeFormat(\IntlDateFormatter::SHORT),
             ]
         );
 
@@ -151,13 +169,12 @@ class Form extends Generic implements TabInterface
                 'date_format' => $dateFormat,
                 'time_format' => $timeFormat,
                 'title' => __('End Date'),
-                'required' => false
+                'required' => true,
+                'class' => 'required-entry',
+                'readonly' => true,
+                'note' => $this->_localeDate->getDateTimeFormat(\IntlDateFormatter::SHORT),
             ]
         );
-
-        if (!$model->getId()) {
-            $model->setData('status', '1');
-        }
 
         $form->setValues($model->getData());
         $this->setForm($form);
@@ -170,7 +187,7 @@ class Form extends Generic implements TabInterface
     */
     public function getTabLabel()
     {
-        return __('Slider Information');
+        return __('Banner Information');
     }
 
     /**
@@ -178,7 +195,7 @@ class Form extends Generic implements TabInterface
      */
     public function getTabTitle()
     {
-        return __('Slider Information');
+        return __('Banner Information');
     }
 
     /**
@@ -217,19 +234,13 @@ class Form extends Generic implements TabInterface
      */
     protected  function getOptionListSlider()
     {
-        $option[] = [
-            'value' => '',
-            'label' => __('-------- Please select a slider --------'),
-        ];
+        $option[''] = __('-------- Please select a slider --------');
 
         $modelSlider = $this->_sliderFactory->create();
         $sliderCollection = $modelSlider->getCollection();
 
         foreach ($sliderCollection as $slider) {
-            $option[] = [
-                'value' => $slider->getId(),
-                'label' => $slider->getTitle(),
-            ];
+            $option[$slider->getId()] =$slider->getTitle();
         }
 
         return $option;

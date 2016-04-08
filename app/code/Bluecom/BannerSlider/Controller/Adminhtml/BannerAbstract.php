@@ -1,7 +1,9 @@
 <?php
 namespace Bluecom\BannerSlider\Controller\Adminhtml;
 
+use Bluecom\BannerSlider\Model\Banners;
 use Bluecom\BannerSlider\Model\BannersFactory;
+use Bluecom\BannerSlider\Model\Sliders;
 use Bluecom\BannerSlider\Model\SlidersFactory;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -37,6 +39,10 @@ abstract class BannerAbstract extends Action
 
     protected $_sliderFactory;
 
+    protected $_bannerModel;
+
+    protected $_sliderModel;
+
     public function __construct(
         Context $context,
         Registry $coreRegistry,
@@ -44,7 +50,9 @@ abstract class BannerAbstract extends Action
         LayoutFactory $resultLayoutFactory,
         ForwardFactory $forwardFactory,
         BannersFactory $bannersFactory,
-        SlidersFactory $slidersFactory
+        SlidersFactory $slidersFactory,
+        Banners $bannerModel,
+        Sliders $slidersModel
     )
     {
         $this->_coreRegistry = $coreRegistry;
@@ -57,5 +65,7 @@ abstract class BannerAbstract extends Action
 
         $this->_bannerFactory = $bannersFactory;
         $this->_sliderFactory = $slidersFactory;
+        $this->_bannerModel = $bannerModel;
+        $this->_sliderModel = $slidersModel;
     }
 }

@@ -57,6 +57,15 @@ class InstallSchema implements InstallSchemaInterface
                 'Slider description'
             )->setComment(
                 'Slider Table'
+            )->addIndex(
+                $installer->getIdxName('bc_slider', ['slider_id']),
+                ['slider_id']
+            )->addIndex(
+                $installer->getIdxName('bc_slider', ['title']),
+                ['title']
+            )->addIndex(
+                $installer->getIdxName('bc_slider', ['status']),
+                ['status']
             );
         $installer->getConnection()->createTable($table);
 
@@ -108,6 +117,12 @@ class InstallSchema implements InstallSchemaInterface
                 ['nullable' => true],
                 'Banner image alt'
             )->addColumn(
+                'description',
+                \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                null,
+                ['nullable' => true],
+                'Banner description'
+            )->addColumn(
                 'start_time',
                 \Magento\Framework\DB\Ddl\Table::TYPE_DATETIME,
                 null,
@@ -121,6 +136,18 @@ class InstallSchema implements InstallSchemaInterface
                 'Banner ending time'
             )->setComment(
                 'Items Banner Of Slider'
+            )->addIndex(
+                $installer->getIdxName('bc_banner', ['banner_id']),
+                ['banner_id']
+            )->addIndex(
+                $installer->getIdxName('bc_banner', ['name']),
+                ['name']
+            )->addIndex(
+                $installer->getIdxName('bc_banner', ['status']),
+                ['status']
+            )->addIndex(
+                $installer->getIdxName('bc_banner', ['url']),
+                ['url']
             );
 
         $installer->getConnection()->createTable($table);
